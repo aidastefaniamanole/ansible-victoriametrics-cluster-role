@@ -2,7 +2,7 @@
 # defaults settings for all VictoriaMetrics nodes
 victoriametrics_repo_url: "https://github.com/VictoriaMetrics/VictoriaMetrics"
 victoriametrics_download_url: "{{ victoriametrics_repo_url }}/releases/download/{{ victoriametrics_version }}/victoria-metrics-amd64-{{ victoriametrics_version }}-cluster.tar.gz"
-victoriametrics_version: "v1.34.9"
+victoriametrics_version: "v1.69.0"
 victoriametrics_system_user: "victoria"
 victoriametrics_system_group: "victoria"
 
@@ -13,12 +13,12 @@ victoriametrics_vmstorage_memory_allowed_percent: "60"
 victoriametrics_vmstorage_service_args: "-search.maxUniqueTimeseries=3000000" 
 
 # variables for vmselect nodes
-victoriametrics_vmselect_cache_dir: "/usr/local/bin/victoria-cache"
+victoriametrics_vmselect_cache_dir: "/usr/local/bin/victoria-cache" # should I disable this layer?
 victoriametrics_vmselect_service_args: "-search.maxPointsPerTimeseries=1000000000 -search.maxQueryDuration=120s"
 victoriametrics_vmselect_memory_allowed_percent: "60"
 
 # variables for vminsert nodes
-victoriametrics_vminsert_service_args: ""
+# victoriametrics_vminsert_service_args: "-influxSkipSingleField"
 victoriametrics_vminsert_memory_allowed_percent: "60"
 
 # variables for service's listen address

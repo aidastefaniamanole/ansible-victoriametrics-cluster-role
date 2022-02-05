@@ -13,8 +13,8 @@ victoriametrics_vmstorage_memory_allowed_percent: "60"
 victoriametrics_vmstorage_service_args: "-search.maxUniqueTimeseries=3000000" 
 
 # variables for vmselect nodes
-victoriametrics_vmselect_cache_dir: "/usr/local/bin/victoria-cache" # should I disable this layer?
-victoriametrics_vmselect_service_args: "-search.maxPointsPerTimeseries=1000000000 -search.maxQueryDuration=120s"
+victoriametrics_vmselect_cache_dir: "/usr/local/bin/victoria-cache"
+victoriametrics_vmselect_service_args: "-search.maxPointsPerTimeseries=1000000000 -search.maxQueryDuration=120s -search.disableCache" # disable the cache when backfilling data
 victoriametrics_vmselect_memory_allowed_percent: "60"
 
 # variables for vminsert nodes
